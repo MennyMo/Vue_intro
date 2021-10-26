@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+	background: #f6f5f7;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Montserrat', sans-serif;
+	height: 100vh;
+	margin: -20px 0 50px;
+    justify-content: space-between;
+}
+form {
+	background-color: #FFFFFF;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 0 50px;
+	height: 100%;
+	text-align: center;
+    
+}
+input {
+	background-color: #eee;
+	border: none;
+	padding: 12px 15px;
+	margin: 8px 0;
+	width: 100%;
+}
+.container {
+	background-color: #fff;
+	border-radius: 10px;
+  	box-shadow: 0 14px 28px rgba(0,0,0,0.25), 
+			0 10px 10px rgba(0,0,0,0.22);
+	position: relative;
+	overflow: hidden;
+	max-width: 100%;
+	min-height: 480px;
+    display: flex;
+    margin-right: 10rem ;
+}
+.list {
+    padding-top: 0;
+}
+
+
+    </style>
+</head>
+<body>
+    
+   <div id="display">
+    <div class="list">
+        <ol>
+            <li v-for ='feature in features'>
+                My name is {{feature.name}}  <br>
+                
+
+            </li>
+            <li v-for ='feature in features'>
+               
+                I am a {{feature.occupation}} <br>
+               
+            </li>
+            <li v-for ='feature in features'>
+               
+                I live in {{feature.address}} <br>
+
+            </li>
+            <li v-for ='feature in features'>
+               
+                I love {{feature.foods}} <br>
+
+            </li>
+            <li v-for ='feature in features'>
+               
+                I would love to visit {{feature.countries}} <br>
+
+            </li>
+        </ol>
+    </div>
+    <div class="container">
+           <form>
+            <h3>Login Form</h3>
+
+            <label for="name" >My name is:</label>
+            <input type="text"  placeholder="Fullname" v-model ='formData.name'> <br>
+            <label for="username" >Username:</label>
+            <input type="text"  placeholder="Username" v-model ='formData.username'><br>
+            <label for="email" >My mail:</label>
+            <input type="email"  placeholder="you@mail.com" v-model ='formData.email'><br>
+            <label for="pnum" >My phone-number:</label>
+            <input type="tel"   placeholder="11 digit number" v-model ='formData.pnum'><br>
+            <button @click.prevent = 'submit'>SUbmit</button>
+            
+           </form>
+          
+    </div>
+    <br><br>
+    <div>
+        <table>
+            <tr>
+                <th>Customer's Name</th>
+                <th>Customer's Email</th>
+            </tr>
+            <tr v-for='data in tableData'>
+                <td>{{data.name}}</td>
+                <td>{{data.email}}</td>
+            </tr>
+        </table>
+    </div>
+</div>
+   </div>
+    
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+
+    <script src="script.js"></script>
+</body>
+</html>
